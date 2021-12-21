@@ -22,26 +22,26 @@ This project requires mongodb as the database backend.
   
 -  Clone the repository
 
-     git clone https://github.com/adityacp/DJRTSHARE.git
+     git clone https://github.com/adityacp/Dynamic-Forms.git
 
 -  Go to the project directory
 
-     cd DJRTSHARE
-
+     cd Dynamic-Forms
 
 - Installing project packages
 
      pip install -r requirements.txt
 
-
 - Run migrations
 
-     python manage.py makemigrations 
+     python manage.py makemigrations
+     
      python manage.py migrate
 
-
 - Run server Locally
-
+     
+     cd dynamic_form
+     
      python manage.py runserver
 
 
