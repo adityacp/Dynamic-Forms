@@ -69,8 +69,13 @@ class FormView(View):
 class ResponseView(View):
     def get(self, request, response_id):
         response = Response.objects.get(_id=ObjectId(response_id))
-        response_data = dict(form_id=str(response.form._id), answers=response.answers)
-        return JsonResponse(form_data)
+        response_data = dict(
+            form_id=str(response.form.get('_id')),
+            response_id=str(response._id),
+            fields=json_util.dumps(response.form.get('fields')), 
+            answers=response.answers
+        )
+        return JsonResponse({"message": "success", "response": response_data})
 
     def post(self, request, form_id):
         answers = request.POST.get("answers")
